@@ -259,11 +259,12 @@
 	
 	if($test)
 	{
-		$mensaje = "Se actualizo la quiniela :)";
+		$mensaje = urlencode("<div class='alert alert-success alert-dismissable fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Se actualizo la quiniela :)  </strong><p><a href='protegido.php' class ='alert-link'><i class='fa fa-home' aria-hidden='true'></i> Inicio</a></p></div>
+");
 	}
 	else
 	{
-		$mensaje = "No se pudo actualizar :/";
+		$mensaje = urlencode("<div class='alert alert-danger alert-dismissable fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>No se pudo actualizar :/ </strong></div>");
 	}
 
 	$conexion->close();

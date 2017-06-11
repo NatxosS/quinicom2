@@ -6,9 +6,26 @@
 	box-sizing: border-box;
 }
 
-body {background:#AAAAAA;}
-
-.menu_bar {
+body {background:#FFFFFF;}
+.boton {
+    margin: 15px auto;
+}
+.alert {
+    position : absolute;
+    float: left;
+    top: 40%;
+    left: 40%;
+}
+.alert p {
+    text-align: center;
+}
+@media screen and (max-width: 800px) {
+    .alert {
+        top: 40%;
+        left: 25%;
+    }
+}
+/*.menu_bar {
 	display:none;
 }
 
@@ -83,9 +100,9 @@ header nav ul li .caret {
 	top:3px;
 	margin-left:10px;
 	margin-right:0px;
-}
+}*/
  
-@media screen and (max-width: 800px) {
+/*@media screen and (max-width: 800px) {
 	body {
 		padding-top:80px;
 	}
@@ -148,9 +165,9 @@ header nav ul li .caret {
 		float: right;
 	}
 
-}
+}*/
 
-.main {
+/*.main {
 	width:90%;
 	max-width:1000px;
 	margin:20px auto;
@@ -203,9 +220,9 @@ input[type="text"]:focus
 	background: #C6ECF9;
 }
 
-table tr 
+*/table tr 
 {
-	background: orange;
+	background: transparent;
 }
 table thead tr 
 {
@@ -216,12 +233,12 @@ table tr:nth-child(even)
 {
 	background: darksalmon;
 }
-table.rellenar
-{
-	font-size: .8em;
+
+.rellenar > tbody > tr:nth-of-type(9) {
+    background-color: rgba(135, 188, 94, 0.6);
 }
 
-
+/*
 input[type="submit"]
 {
 	background: #D7C795;
@@ -283,14 +300,12 @@ label
 	font-size: 1em;
 	padding: .5em;
 }
-#salir a
+#salir
 {
 	text-align: left;
 	float: right;
-	bottom: 0%;
+	bottom: 2%;
 	position: absolute; 
 }
 
-.salida {
-	background-image: url(../img/salir.png);
-}
+*/

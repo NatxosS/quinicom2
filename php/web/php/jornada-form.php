@@ -20,17 +20,19 @@
 
 	if($num_regs == 0)
 	{
-		echo "<br /><br /><span class='mensajes'>No se encontraron registros :( </span><br /> ";
+		echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>No se encontrarón los registros :/ </strong></div>";
 	}
 	else
 	{
 	?>
-		<table>
+	 <div class="row">
+            <div class="table-responsive col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                <table class="table table-striped table-bordered table-hover text-center">
 			<thead>
 				<tr>
-					<th>Num</th>
+                                    <th style="width: 20px">Num</th>
 					<th>Partido</th>
-					<th>1 X 2</th>
+					<th>Resultado final</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,7 +44,7 @@
 				?>
 					<tr>
 						<td> <?php echo $i; ?></td>
-						<td width="60%"> <input  autocomplete="off" type="text"  name='partido_<?php echo $i; ?>' value='<?php echo utf8_decode($registros["partido"]); ?>' /> </td>
+                                                <td width="60%"> <input autocomplete="off" type="text" name='partido_<?php echo $i; ?>' class="form-control" placeholder="Equipo1 - Equipo2" value='<?php echo utf8_decode($registros["partido"]); ?>' /> </td>
 						<td width="90"> 
 							<input type="radio" name="rdo_<?php echo $i; ?>" value="1" <?php if (($registros["resultado"]) == "1") echo "checked"; ?> onDblClick="uncheckRadio(this)" /> 
 							<input type="radio" name="rdo_<?php echo $i; ?>" value="X" <?php if (($registros["resultado"]) == "X") echo "checked"; ?> onDblClick="uncheckRadio(this)" /> 
@@ -60,8 +62,8 @@
 	}
 	$conexion->close();
 ?>
-	<div>
-		<br/>
-		<input type="submit" id="enviar-cambio" class="cambio" name="enviar_btn" value="Guardar" />
-	</div>
+        <div class="row boton">
+            <button type="submit" name="enviar_btn" id="enviar-cambio" class="cambio btn btn-primary btn-lg btn-block">Guardar</button>
+            <button type="submit" name="enviar_btn" id="solicitarPartidos" class="cambio btn btn-primary btn-lg btn-block" disabled>Cargar Partidos</button>
+        </div>
 </div>

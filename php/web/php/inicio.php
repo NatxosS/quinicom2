@@ -14,7 +14,7 @@ inner JOIN (select id_partidos, resultado as Vr FROM partidousuario where id_usu
 order by p.id_partidos";
 
 $consulta2 = "select pu.id_usuarios, COUNT(p.partido) as cuenta from partidousuario as pu left JOIN partidos as p on p.id_partidos = pu.id_partidos and p.resultado = pu.resultado GROUP by pu.id_usuarios";
-			include("php/inicio-form.php");
+include("php/inicio-form.php");
 ?>
 </form>
 <script>

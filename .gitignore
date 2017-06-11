@@ -1,3 +1,4 @@
 nbproject
 *.sql
 conexion.php
+node_modules

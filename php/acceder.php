@@ -5,8 +5,7 @@
  
  $email = $_POST["email_txt"];
  $pass = $_POST["pass_txt"];
- 
- 
+
  $consulta = "SELECT id_usuarios, nombre FROM usuarios WHERE email = '".$email."' and pass = '".$pass."';";
  $ejecutar_consulta = $conexion->query($consulta);
 
@@ -19,6 +18,7 @@
 		$_SESSION["usuario"] = $registros["nombre"];
 		$_SESSION["id-usuario"] = $registros["id_usuarios"];
 		$_SESSION["error"] = 0 ;
+                $conexion->close();
 		header("Location: web/protegido.php");
 
 	}
@@ -31,8 +31,7 @@
 	$_SESSION["autentificado"] = false ;
 	$_SESSION["usuario"] = "";
 	$_SESSION["id-usuario"] = 0;
+        $conexion->close();
 	header("Location: ../index.php");
  }
-$conexion->close();
 
-?>

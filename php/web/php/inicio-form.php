@@ -1,8 +1,7 @@
 <div id="jornada">
     <?php
-    //include("conexion.php");
-    $conexion = new mysqli("localhost", "root", "root", "quinielas") or die("No se pudo conectar al servidor de datos MySQL");
-    error_log(print_r($conexion, true));
+    include("conexion.php");
+
     $ejecutar_consulta = $conexion->query($consulta);
     $num_regs = $ejecutar_consulta->num_rows;
 
@@ -106,7 +105,7 @@
                             }
                             ?>
                     <script languaje="javascript">
-                        colorear();
+                        funcion_colorea();
                     </script> 
                             <?php
                         }

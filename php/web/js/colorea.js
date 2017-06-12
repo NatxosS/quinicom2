@@ -1,9 +1,11 @@
+
 function funcion_colorea(){
 	var resultados = new Array(15)
 	var res = new Array(9)
 	for (i=0; i <9; i++){
 		res[i]=new Array(15)	
 	}
+
     var totales = new Array(9)
     for (i = 1; i < 9; i++) {
         totales[i] = document.getElementById("total" + i).innerText;
@@ -26,10 +28,10 @@ function funcion_colorea(){
 			for (j = 1; j < 15; j++) {
 				var nombrecelda = i + "_" + j ;
     			if (resultados[j] == res[i][j]){
-    				document.getElementById(nombrecelda).bgColor='#72FD72'; 
+    				document.getElementById(nombrecelda).bgColor='#5CB85C'; 
     			}
     			else{
-					document.getElementById(nombrecelda).bgColor='#FD4E4E'; 
+                            document.getElementById(nombrecelda).bgColor='darksalmon'; 
     			}
     		}
 		}
@@ -37,25 +39,26 @@ function funcion_colorea(){
          for (i = 1; i < 9; i++) {
             var nombrecelda = "total" + i ;
             if (totales[i] < 10){
-                    document.getElementById(nombrecelda).bgColor='#FD4E4E'; 
+                    document.getElementById(nombrecelda).bgColor='darksalmon'; 
                 }
             else if (totales[i] == 10){
-                    document.getElementById(nombrecelda).bgColor='#FFFB87'; 
-                }
-             else if (totales[i] == 11){
                     document.getElementById(nombrecelda).bgColor='#C7DEA5'; 
                 }
+             else if (totales[i] == 11){
+                    document.getElementById(nombrecelda).bgColor='#5bc0de'; 
+                }
              else if (totales[i] == 12){
-                    document.getElementById(nombrecelda).bgColor='#89D99A'; 
+                    document.getElementById(nombrecelda).bgColor='#D34AFF'; 
                 }
              else if (totales[i] == 13){
-                    document.getElementById(nombrecelda).bgColor='#4AF38D'; 
+                    document.getElementById(nombrecelda).bgColor='#FF8B00';//FFAF50
                 }
              else if (totales[i] == 14){
-                    document.getElementById(nombrecelda).bgColor='#4AF3DA'; 
+                    document.getElementById(nombrecelda).bgColor='red'; 
+                    document.getElementById(nombrecelda).style.color='white'; 
                 }
             else {
-                     document.getElementById(nombrecelda).bgColor='#FD4E4E'; 
+                     document.getElementById(nombrecelda).bgColor='darksalmon'; 
             }
         }
 

@@ -20,10 +20,6 @@ switch ($op) {
         $contenido = "php/fin.php";
         $titulo = "Fin Jornada";
         break;
-    case 'ubicacion':
-        $contenido = "php/ubicacion-despacho.php";
-        $titulo = "Ubicación";
-        break;
     default:
         $titulo = "Resultados";
         $contenido = "php/inicio.php";

@@ -1,5 +1,5 @@
 <?php
-    $hecho = false;
+    $hecho = false; // variable que nos dira si ejecutar la finalización o no
 ?>
 <script>
     function validarDatos() {

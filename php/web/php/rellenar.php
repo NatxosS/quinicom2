@@ -4,6 +4,8 @@
 		<?php
 			$consulta = "select p.id_partidos, p.partido, ps.resultado from partidousuario as ps inner join partidos as p on p.id_partidos = ps.id_partidos where ps.id_usuarios = ".$_SESSION["id-usuario"]." order by p.id_partidos";
 			include("php/rellenar-form.php");
+                        
+                        // recogemos los datos de los partidos
 		?>
 		</form>
 		<?php

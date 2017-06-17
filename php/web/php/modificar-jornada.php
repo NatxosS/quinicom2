@@ -1,4 +1,6 @@
 <?php
+
+// recogemos las variables del formulario y al final actualizamos los datos
  $partido1 = $_POST["partido_1"];
  	if(isset($_POST["rdo_1"])){
  		 $resultado1 = $_POST["rdo_1"];

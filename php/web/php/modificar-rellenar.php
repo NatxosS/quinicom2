@@ -1,4 +1,6 @@
 <?php
+
+/* cogemos los datos recogidos del formulario de la vista rellenar-form */
  	if(isset($_POST["rdo_1"])){
  		 $resultado[0] = $_POST["rdo_1"];
     }else{
@@ -86,6 +88,8 @@
  $usuario = $_SESSION["id-usuario"];
 
  $test = false;
+ 
+ // recogemos los datos
 
  include("conexion.php");
 
@@ -93,6 +97,7 @@
  		$j = $i -1;
  		echo $i;
  		echo $j;
+                // actualizamos la apuesta
  		$consulta = "UPDATE partidousuario SET resultado= '$resultado[$j]' WHERE id_usuarios = '$usuario' and id_partidos = '$i';";
  		echo $consulta;
  		echo "<br/>";

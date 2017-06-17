@@ -1,3 +1,5 @@
+<!-- *******************  Vista Rellenar  ************** -->
+
 <div id="jornada">
     <?php
     include("conexion.php");

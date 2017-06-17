@@ -1,16 +1,19 @@
+<!-- *****************************  COntenido de la vista Principal "Quinicom" ************* -->
 <div id="jornada">
     <?php
     include("conexion.php");
 
     $ejecutar_consulta = $conexion->query($consulta);
     $num_regs = $ejecutar_consulta->num_rows;
+    // ejecutamos la consulta que nos devuelve partidos, resultados y apuestas
 
     if ($num_regs == 0) {
         echo "<div class='alert alert-danger alert-dismissable fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>No se encontrarón los registros :/ </strong></div>";
     } else {
+        // y mostramos los datos en la tabla
         ?>
         <div class="table-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <table class="table table-striped table-bordered table-hover text-center">
+            <table class="table table-striped table-bordered text-center">
                 <thead>
                     <tr>
                         <th style="width: 20px">Num</th>
@@ -73,8 +76,8 @@
                     <?php
                     $ejecutar_consulta2 = $conexion->query($consulta2);
                     $num_regs2 = $ejecutar_consulta2->num_rows;
-
-                    if ($num_regs2 == 0) {
+// ejecutamos la consulta de los totales de aciertos
+                    if ($num_regs2 == 0) { // si la consulta no devuelve registros ponemos a 0 estas celdas
                         ?>
 
 

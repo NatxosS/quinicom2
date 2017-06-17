@@ -14,14 +14,14 @@
             <?php
                 $hecho = true;
             ?>
-            document.cambio_frm.submit();
+            document.cambio_frm.submit(); // si aceptamos el mensaje de alerta se hara el submit del formulario (modificar-fin-jornada.php)
         } else {
             document.cambio_frm.recaudado_txt.focus();
         }
     }
 
     window.onload = function () {
-        document.getElementById("enviar-cambio").onclick = validarDatos;
+        document.getElementById("enviar-cambio").onclick = validarDatos; // al hacer clic en el boton nos vamos a la función validar datos
     }
 
 </script>
@@ -31,7 +31,7 @@
         ?>
         <div class="row">
             <div class="table-responsive col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                <table class="table table-striped table-hover text-center">
+                <table class="table table-striped text-center">
                     <thead>
                         <tr>
                             <th colspan="4">Jornada pagada por:</th>
@@ -72,7 +72,7 @@
                     </tbody>
                 </table>
                 <div class="row boton">
-                    <button type="submit" name="enviar_btn" id="enviar-cambio" class="cambio btn btn-primary btn-lg btn-block">Guardar</button>
+                    <button type="submit" name="enviar_btn" id="enviar-cambio" class="cambio btn btn-primary btn-lg btn-block">Guardar y Finalizar Jornada</button>
                 </div>
             </div>
         </div>    
@@ -80,7 +80,7 @@
 <?php
 include("php/mensajes.php");
 ?>
-<?php
+<?php // incluimos la vista del archivo tabla-importes.php a cntinuación, ejecutando la consulta que nos suma los impirtes recaudados con el mismo id de usuario y las participaciones con el mismo id de usuario
 $consulta = "select usuarios.nombre, SUM(importe) as importe, count(id_usuarios) as participaciones from jornadas inner join usuarios on jornadas.id_echada = usuarios.id_usuarios group by id_echada
 						UNION
 						select 'Total:', sum(importe), COUNT(id_jornada) from jornadas;";

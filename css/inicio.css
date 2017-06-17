@@ -11,7 +11,8 @@ body
     margin-top: 20%;
 }
 
-@media screen and (max-width: 450px) {
+/* en dispositivos con pantalla pequeña eliminamos la imagen de fondo */
+@media (max-width: 450px) {
     body {
         background-color: whitesmoke;
         background-image: none;
@@ -20,61 +21,3 @@ body
         margin-top: 25%;
     }
 }
-
-/*
-input[type="submit"]
-{
-    margin-top: 2%;
-    background: #ED512A;
-    border-radius: 0 .25em;
-    color: #000;
-    font-family: Georgia, verdana, "lucida calligraphy";
-    font-size: 1.5em;
-    margin-bottom: 1%;
-}
-
-#formulario
-{
-    margin-left: 30%;
-    width: 35%;
-    padding-top: 19%;
-    text-align: left;
-}
-
-legend {
-    text-align: center;
-}
-
-input[type=email], input[type=password] {
-    -webkit-appearance: none; -moz-appearance: none;
-    display: block;
-    margin: 0;
-    width: 100%; 
-    border: 1px solid #bbb;
-}
-
-input[type=email].focus, input[type=password].focus {
-background: #C6ECF9;
-}
-
-
-input[type="submit"]:hover
-{
-    background: #328317;
-    border-radius: .25em 0;
-    color: #000;
-    cursor: pointer;
-}
-
-span
-{
-    color: red;
-}
-
-.cambio
-{
-    -ms-transition: all 1.5s ease-out;
-    -moz-transition: all 1.5s ease-out;
-    -o-transition: all 1.5s ease-out;
-    -webkit-transition: all 1.5s ease-out;
-}*/

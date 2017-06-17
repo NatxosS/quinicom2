@@ -1,12 +1,5 @@
-<?PHP
-/*include('php/Mobile_Detect.php');
-$detect = new Mobile_Detect(); //redireccionar a versión móvil si nos visitan desde un móvil o tablet 
-if ($detect->isMobile() || $detect->isTablet()) {
-    $css = "css/iniciom.css";
-} else {
-    $css = "css/inicio.css";
-}*/
-?>
+<!-- **********************  PÁGINA DE LOGIN  ****************  -->
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -14,11 +7,11 @@ if ($detect->isMobile() || $detect->isTablet()) {
         <title>Acceso quiniela</title>
         <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="node_modules/font-awesome-4.7.0/css/font-awesome.min.css">
-        <!--link rel="stylesheet" href=<?PHP echo $css ?> /-->
         <link rel="stylesheet" href="css/inicio.css">
     </head>
     <body>
         <section id="contenido" class="container-fluid">
+            <!-- formulario de login, al hacer submit comprobamos las credenciales introducidas en acceder.php -->
             <div class=" fotmularioLogin row">
                 <form class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-2 form-horizontal" id="inicio-sesion" name="sesion_frm" action="php/acceder.php" method="post" enctype="multipart/form-data">
                     <h2>Iniciar sesión</h2>
@@ -43,15 +36,6 @@ if ($detect->isMobile() || $detect->isTablet()) {
                         session_start();
                         if (isset($_SESSION["error"]) && $_SESSION["error"] > 0) {
                             echo "<br/><span>Inicio sesion fallida</span><br/>";
-                            /* if ($_SESSION["error"] > 0 ){
-                              if ($_SESSION["error"] < 10 ){
-                              echo "<br/><span>Inicio sesion fallida: Intentos ".$_SESSION["error"]." de 3 </span><br/>";
-                              }
-                              else
-                              {
-                              header ("Location: https://www.google.es");
-                              }
-                              } */
                         }
                         ?>
                 </form>

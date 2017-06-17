@@ -12,7 +12,7 @@
 		?>
                 <div class="row">
                     <div class="table-responsive col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                        <table class="rellenar table table-striped table-bordered table-hover text-center">
+                        <table class="rellenar table table-striped table-bordered text-center">
                             <thead>
                                     <tr>
                                             <th>Nombre</th>

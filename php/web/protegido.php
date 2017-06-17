@@ -1,12 +1,17 @@
 <?php
+
+
 session_start();
 //Evaluo que la sesion continua verificando una de las variables creada sigue en true
 if (!$_SESSION["autentificado"]) {
     header("Location: php/salir.php");
 }
-error_log("Entro en protegido");
-error_reporting(E_ALL ^ E_NOTICE);
-$op = $_GET["op"];
+error_reporting(0);
+$op = $_GET["op"]; 
+/* capturamor la variable op de la url que nos indicará que vista cargar dentro de 
+ * dentro de la etiqueta HTML section con id="principal
+ * Por defecto nos enviará a la vista principal "Quincom" pasando primero por el archivo inicio.php
+ */
 switch ($op) {
     case 'jornada':
         $contenido = "php/jornada.php";
@@ -27,6 +32,8 @@ switch ($op) {
 }
 ?>
 
+<!--  ***************************   Vista que contendra el restode vista de la aplicación  */ -->
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -41,13 +48,9 @@ switch ($op) {
         <script>
             !window.jQuery && document.write("<script src='js/jQuery.min.js'><\/script>");
         </script>
-        <script src="js/menu.js"></script>
         <script src="js/colorea.js"></script>
-        <script src="js/limite.js"></script>
-        <script src="js/desactivar.js"></script>
-        <script src="js/noticias.js"></script>
         <div class="container">
-            <nav class="navbar navbar-inverse">
+            <nav class="navbar navbar-inverse"> <!-- Barra de navegación responsiva, se solapsa en dispositivos moviles -->
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -75,19 +78,26 @@ switch ($op) {
             </nav>
             <h4> Bienvenido 
                 <?php
-                echo "<script> scriptAskForWebNotificationPermissions() </script>";
                 echo $_SESSION["usuario"] . "<br/>";
                 echo "</h4>"
                 ?>
 
                 <section id="principal">
-                    <?php include($contenido); ?>
+                    <?php include($contenido); ?> <!-- Aui es donde cargaremos las diferentes vistas de la web -->
                 </section>
-                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                <script src="js/jquery.min.js"></script>
+                <script src="js/jscrollpane.min.js"></script>
                 <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
                 <script>
             $('#myCollapsible').collapse();
                 </script>
+                <!--script type="text/javascript">
+                    jQuery(document).ready(function () {
+                        if (!jQuery.browser.webkit) {
+                            jQuery('.contenedor').jScrollPane();
+                        }
+                    });
+                </script -->
         </div>
     </body>
 </html>
